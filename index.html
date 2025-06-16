@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Leblanc Coffee - Cadastro</title>
+  <link rel="stylesheet" href="/css/styles.css  ">
+
+ <!-- Supabase CDN -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+  <!-- Script do projeto -->
+  <script defer src="/js/script.js"></script>
+
+</head>
+
+<body>
+  <div class="container">
+    <!-- Formulário -->
+    <section class="form-section">
+      <div class="form-header">
+        <h1>
+          Dashboard <span class="brand">Leblanc</span>
+          <em> Coffee</em>
+        </h1>
+        <p>Acesse o sistema, gerencie produtos e mais!</p>
+      </div>
+
+      <form class="form" id="cadastro-form">
+        <div class="input-group">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" placeholder="Insira seu nome completo" required />
+        </div>
+        <div class="input-group">
+          <label for="cpf">CPF</label>
+          <input type="text" id="cpf" placeholder="Insira seu CPF aqui" required />
+        </div>
+
+        <div class="input-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" placeholder="Insira seu e-mail aqui" required />
+        </div>
+
+        <div class="input-group">
+          <label for="celular">Celular</label>
+          <input type="text" id="celular" placeholder="Insira seu número de celular aqui" required />
+        </div>
+
+        <div class="input-group">
+          <label for="senha">Senha</label>
+          <div class="password-wrapper">
+            <input type="password" id="senha" placeholder="Insira sua senha aqui" required />
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary">Realizar cadastro</button>
+      </form>
+    </section>
+
+    <!-- Imagem -->
+    <section class="image-section">
+      <img src="/image/Login foto.png" alt="LeBlanc Coffee - Café artesanal" />
+    </section>
+  </div>
+</body>
+
+</html>

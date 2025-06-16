@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CMS - Painel Administrativo</title>
+  <link rel="stylesheet" href="/css/styles2.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body class="cms-body">
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <a href="/html/index1.html">
+        <img src="/image/logo.png" alt="Leblanc Coffee" style="cursor:pointer" />
+      </a>
+    </div>
+    <ul class="sidebar-menu">
+      <li class="menu-item"><a href="#" class="menu-link">📊 Catálogo</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">👥 Clientes</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">📦 Pedidos</a></li>
+      <li class="menu-item active">
+        <a href="#" class="menu-link">⚙️ Configurações</a>
+        <ul class="submenu">
+          <li><a href="#" class="submenu-link active">Admins do sistema</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Conteúdo Principal -->
+  <main class="main-content">
+    <header class="content-header">
+      <div class="header-info">
+        <h1>Administradores do sistema</h1>
+        <p>Painel administrativo para controle da administração</p>
+        <div class="table-controls">
+          <div class="tabs">
+            <button class="tab active">Usuários do Sistema</button>
+            <button class="tab">Configurações</button>
+          </div>
+          <div class="filters">
+            <div class="filter-group">
+              <label for="filtroStatus">Status</label>
+              <select id="filtroStatus">
+                <option value="">Ver Todas</option>
+                <option value="Ativo">Ativo</option>
+                <option value="Inativo">Inativo</option>
+              </select>
+            </div>
+            <div class="search-group">
+              <input type="text" id="buscarUsuario" placeholder="Buscar" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a href="#" class="btn-primary btn-add" id="btnAdicionarNovo">+ Adicionar novo</a>
+      </div>
+    </header>
+
+    <section class="table-container">
+      <table class="users-table">
+        <thead>
+          <tr>
+            <th><input type="checkbox" id="selectAll" /></th>
+            <th>Nome</th>
+            <th>Celular</th>
+            <th>E-mail</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tabelaUsuarios"></tbody>
+      </table>
+    </section>
+
+    <section class="pagination">
+      <div class="pagination-left">
+        <span>Paginação:</span>
+        <select id="itensPorPagina">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+        </select>
+      </div>
+      <span id="infoPaginacao">1-5 de 0</span>
+      <div class="pagination-controls">
+        <button id="paginaAnterior">‹</button>
+        <button id="proximaPagina">›</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="userModal" class="modal hidden">
+    <div class="modal-content">
+      <header class="modal-header">
+        <h2 id="modalTitle"></h2>
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+      </header>
+      <form id="userForm">
+        <input type="hidden" id="userId" />
+        <div class="input-group">
+          <label for="nome_completo">Nome completo</label>
+          <input type="text" id="nome_completo" required />
+        </div>
+        <div class="input-group">
+          <label for="cpf">CPF</label>
+          <input type="text" id="cpf" required />
+        </div>
+        <div class="input-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="input-group">
+          <label for="celular">Celular</label>
+          <input type="text" id="celular" required />
+        </div>
+        <div class="input-group">
+          <label for="status">Status</label>
+          <select id="status">
+            <option value="Ativo">Ativo</option>
+            <option value="Inativo">Inativo</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-secondary" onclick="closeModal()">Voltar</button>
+          <button type="submit" class="btn-primary" id="modalSubmit">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="/js/scripy2.js" defer></script>
+
+  <a href="/html/index1.html" class="btn-sair">Sair</a>
+</body>
+
+</html>
