@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
       form.reset();
 
       //  Redirecionamento para o CMS
-      window.location.href = "index2.html"; 
+      window.location.href = "/CMSLeblanc/index2.html"; 
     });
   }
 });
